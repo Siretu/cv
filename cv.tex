@@ -29,6 +29,7 @@
 \documentclass[a4paper,10pt]{article} % Default font size and paper size
 
 \usepackage{enumitem}
+\usepackage{xstring}
 
 \usepackage{fancyhdr}
 %\cfoot{\textbf{Location:} Stockholm, Sweden. \textbf{GitHub:} \href{https://github.com/Siretu}{Siretu} \\ \textbf{Email:} erikihr@gmail.com \textbf{Phone:} (+46) 72 213 1206}
@@ -57,8 +58,10 @@
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule] % Text formatting of sections
 \titlespacing{\section}{0pt}{3pt}{3pt} % Spacing around sections
 
+\newcommand{\anonymous}{false}
+
 \usepackage[
-top    = 2.55cm,
+top    = 2.0cm,
 bottom = 0.50cm,
 left   = 2.50cm,
 right  = 2.50cm]{geometry}
@@ -74,9 +77,16 @@ right  = 2.50cm]{geometry}
 %----------------------------------------------------------------------------------------
 
 %\par{\centering{\huge Curriculum Vitæ\\
-\par{\centering{\huge Erik Ihrén\\\bigskip
+
+\IfEqCase{\anonymous}{
+	{false}{\par{\centering{\huge Erik Ihrén\\\bigskip
 \small \textbf{Location:} Stockholm, Sweden. \textbf{GitHub:} \href{https://github.com/Siretu}{Siretu} \\ \textbf{Email:} erikihr@gmail.com \textbf{Phone:} (+46) 72 213 1206
-}\par} % Your name
+}\par}}
+	{true}{\par{\centering{\huge John Doe\\\bigskip
+\small \textbf{Location:} Somewhere, Sweden. \textbf{GitHub:} \href{https://github.com/Someone}{Someone} \\ \textbf{Email:} something@gmail.com \textbf{Phone:} (+46) 70 123 4567
+}\par}}
+}
+ % Your name
 
 %\section{Personal Data}
 
@@ -94,7 +104,10 @@ right  = 2.50cm]{geometry}
 \section{Education}
 
 \begin{tabular}{rl}	
-\textsc{2012 - } & \textbf{Royal Institute of Technology}, Stockholm\\
+\textsc{2012 - } & \textbf{\IfEqCase{\anonymous}{
+	{false}{Royal Institute of Technology, Stockholm}
+	{true}{Some University, Sweden}
+}}\\
 & Master's Degree in \textsc{Computer Science}\\
 & Expected graduation year: 2017\\
 & Major GPA: 3.92\\
@@ -133,10 +146,22 @@ right  = 2.50cm]{geometry}
 
 \section{Projects}
 \begin{tabular}{lp{13cm}}
-\textbf{SuperWebRecorder} & \small{Worked as a Project Manager and Programmer in a project with 8 other people for The Beta Family to develop their WebRecorder product that records users on websites for beta testing and usability studies. I focused on serializing all user interaction, along with site DOM changes that could then be saved in a database and replayed as a recording.} \\\\
-\textbf{Cruiser Command} & \small{Spent three years continuously developing and maintaining a mod on my own for Starcraft 2 played by hundreds of players with an average rating of over 4.7/5 out of over 2000 reviews. While developing Cruiser Command from start to finish, I had to solve interesting problems such as advanced Artificial Intelligence, complex math intersection formulas and tracking down bugs in a large code base.} \\\\
+& 
+\IfEqCase{\anonymous}{
+	{false}{\footnotesize{\emph{Full portfolio can be found on \href{http://www.nada.kth.se/~eihren}{my personal site.}}}}
+	{true}{\footnotesize{\emph{Full portfolio can be found on \href{http://www.somesite.com}{my personal site.}}}}
+}
+ \\\\
+\textbf{\href{https://betafamily.com/webrecorder/demo}{SuperWebRecorder}} & \small{Worked as a Project Manager and Programmer in a project with 8 other people for The Beta Family to develop their WebRecorder product that records users on websites for beta testing and usability studies. I focused on serializing all user interaction, along with site DOM changes that could then be saved in a database and replayed as a recording.} \\\\
+\IfEqCase{\anonymous}{
+	{false}{\textbf{\href{http://www.nada.kth.se/~eihren/\#cruisercommand}{Cruiser Command}}}
+	{true}{\textbf{\href{http://www.cruisercommand.com}{Cruiser Command}}}
+} & \small{Spent three years continuously developing and maintaining a mod on my own for Starcraft 2 played by hundreds of players with an average rating of over 4.7/5 out of over 2000 reviews. While developing Cruiser Command from start to finish, I had to solve interesting problems such as advanced Artificial Intelligence, complex math intersection formulas and tracking down bugs in a large code base.} \\\\
 %\textbf{Quadcopter:} & \small{Built and programmed a Quadrocopter from scratch during the summer of 2010 with a friend using the open source AeroQuad library.} \\\\
-\textbf{Kartobot} & \small{Built and programmed a mapping robot with two friends. Using a tower with rotating ultrasonic sensors it was possible to measure the distance and use that to draw a 2D map of the room, while it was exploring using a pathfinding algorithm. I worked mainly on the tower and making sure the ultrasonic sensors were working properly. I also developed an A* algorithm in C for the pathfinding and ended up optimizing it by 100x.}
+\IfEqCase{\anonymous}{
+	{false}{\textbf{\href{https://github.com/Siretu/kartobot}{Kartobot}}}
+	{true}{\textbf{\href{http://github.com/Someone/source}{Kartobot}}}
+} & \small{Built and programmed a mapping robot with two friends. Using a tower with rotating ultrasonic sensors it was possible to measure the distance and use that to draw a 2D map of the room, while it was exploring using a pathfinding algorithm. I worked mainly on the tower and making sure the ultrasonic sensors were working properly. I also developed an A* algorithm in C for the pathfinding and ended up optimizing it by 100x.}
 \end{tabular}
 
 %----------------------------------------------------------------------------------------
