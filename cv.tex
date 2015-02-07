@@ -32,7 +32,6 @@
 \usepackage{xstring}
 
 \usepackage{fancyhdr}
-%\cfoot{\textbf{Location:} Stockholm, Sweden. \textbf{GitHub:} \href{https://github.com/Siretu}{Siretu} \\ \textbf{Email:} erikihr@gmail.com \textbf{Phone:} (+46) 72 213 1206}
 \rhead{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
@@ -48,7 +47,8 @@
 
 \usepackage{fullpage} % Margin formatting of the A4 page, an alternative to layaureo can be \usepackage{fullpage}
 % To reduce the height of the top margin uncomment: 
-\addtolength{\voffset}{-1.3cm}
+%\addtolength{\voffset}{-1.3cm}
+%\setlength{textheight}{700pt}
 
 \usepackage{hyperref} % Required for adding links	and customizing them
 \definecolor{linkcolour}{rgb}{0,0.2,0.6} % Link color
@@ -56,19 +56,23 @@
 
 \usepackage{titlesec} % Used to customize the \section command
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule] % Text formatting of sections
-\titlespacing{\section}{0pt}{3pt}{3pt} % Spacing around sections
+\titlespacing{\section}{0pt}{1.5pt}{1.5pt} % Spacing around sections
 
 \newcommand{\anonymous}{false}
+\newcommand{\longdesc}{false}
 
 \usepackage[
-top    = 2.0cm,
-bottom = 0.50cm,
+top    = 0.5cm,
+bottom = 0.4cm,
 left   = 2.50cm,
-right  = 2.50cm]{geometry}
+right  = 2.50cm
+]{geometry}
+%\newgeometry{left=3cm,bottom=0.1cm}
 
 \begin{document}
 
 \pagestyle{fancy} % Removes page numbering
+\pagenumbering{gobble}
 
 %\font\fb=''[cmr10]'' % Change the font of the \LaTeX command under the skills section
 
@@ -76,7 +80,6 @@ right  = 2.50cm]{geometry}
 %	NAME AND CONTACT INFORMATION
 %----------------------------------------------------------------------------------------
 
-%\par{\centering{\huge Curriculum Vitæ\\
 
 \IfEqCase{\anonymous}{
 	{false}{\par{\centering{\huge Erik Ihrén\\\bigskip
@@ -86,23 +89,13 @@ right  = 2.50cm]{geometry}
 \small \textbf{Location:} Somewhere, Sweden. \textbf{GitHub:} \href{https://github.com/Someone}{Someone} \\ \textbf{Email:} something@gmail.com \textbf{Phone:} (+46) 70 123 4567
 }\par}}
 }
- % Your name
 
-%\section{Personal Data}
-
-%\begin{tabular}{rl}
-%\textsc{Date of Birth:} & 15 May 1993 \\
-%\textsc{Address:} & Hanstavägen 51, 164 53, Kista, Sweden \\
-%\textsc{Phone:} & +46 72 213 1206\\
-%\textsc{email:} & \href{mailto:erikihr@gmail.com}{erikihr@gmail.com}
-%\end{tabular}
 
 %----------------------------------------------------------------------------------------
 %	EDUCATION
 %----------------------------------------------------------------------------------------
 
 \section{Education}
-
 \begin{tabular}{rl}	
 \textsc{2012 - } & \textbf{\IfEqCase{\anonymous}{
 	{false}{Royal Institute of Technology, Stockholm}
@@ -121,22 +114,32 @@ right  = 2.50cm]{geometry}
 %----------------------------------------------------------------------------------------
 
 \section{Work Experience}
-
 \begin{tabular}{lp{13cm}}
 \textbf{Ericsson} & Software Developer, June 2014 - December 2014 \\
-& \small{Worked on automating dependency extraction for Ericsson’s entire RNC codebase. The work I did automatically figures out the impacted projects and automatically rebuilds and tests those when a commit is pushed. Also improved upon a general build support tool to simplify continuous integration.}\\
+& \IfEqCase{\longdesc}{
+	{true}{\small{Worked on automating dependency extraction for Ericsson’s entire RNC codebase. The work I did automatically figures out the impacted projects and automatically rebuilds and tests those when a commit is pushed. Also improved upon a general build support tool to simplify continuous integration.}}
+	{false}{\small{Worked on automating dependency extraction for Ericsson’s entire RNC codebase. The work I did automatically figures out the impacted projects and automatically rebuilds and tests those when a commit is pushed. Also improved upon a general build support tool to simplify continuous integration.}}
+}
+\\
 \multicolumn{2}{c}{} \\
 
 %------------------------------------------------
 
 \textbf{Domain Name ~~~~~~} & Summer Intern, May 2013 - August 2013\\
-\textbf{Services     }& \small{Worked in South Africa on programming an internal asset registry in the Django admin interface for registering and keeping track of company assets. I also participated in the ICANN and AFRINIC conferences where I spoke to potential customers about dotAfrica.}\\
+\textbf{Services     }& \IfEqCase{\longdesc}{
+	{true}{\small{Worked in South Africa on programming an internal asset registry in the Django admin interface for registering and keeping track of company assets. I also participated in the ICANN and AFRINIC conferences where I spoke to potential customers about dotAfrica.}}
+	{false}{\small{Worked in South Africa on programming an internal asset registry in the Django admin interface for registering and keeping track of company assets. I also participated in the ICANN and AFRINIC conferences where I spoke to potential customers about dotAfrica.}}
+}\\
 \multicolumn{2}{c}{} \\
 
 %------------------------------------------------
 
 \textbf{Netnod} & Summer Intern, June 2011 - August 2011 and June 2012 - August 2012\\
- & \small{Developed a user interface with Python’s framework Django to help visualize arbitrary data from databases. This was used to automatically translate and present data for Netnod customers in the Django Admin Interface. I came back a second year after that to optimize and maintain my work.}
+ & \IfEqCase{\longdesc}{
+ 	{true}{\small{Developed a user interface with Python’s framework Django to help visualize arbitrary data from databases. This was used to automatically translate and present data for Netnod customers in the Django Admin Interface. I came back a second year after that to optimize and maintain my work.}}
+ 	{false}{\small{Developed a user interface with Python’s framework Django to help visualize arbitrary data from databases. This was used to automatically translate and present data for Netnod customers in the Django Admin Interface.}}
+ }
+ 
 \end{tabular}
 
 
@@ -152,24 +155,52 @@ right  = 2.50cm]{geometry}
 	{true}{\footnotesize{\emph{Full portfolio can be found on \href{http://www.somesite.com}{my personal site.}}}}
 }
  \\\\
-\textbf{\href{https://betafamily.com/webrecorder/demo}{SuperWebRecorder}} & \small{Worked as a Project Manager and Programmer in a project with 8 other people for The Beta Family to develop their WebRecorder product that records users on websites for beta testing and usability studies. I focused on serializing all user interaction, along with site DOM changes that could then be saved in a database and replayed as a recording.} \\\\
+\textbf{\href{https://betafamily.com/webrecorder/demo}{SuperWebRecorder}} & \IfEqCase{\longdesc}{
+	{true}{\small{Worked as a Project Manager and Programmer in a project with 8 other people for The Beta Family to develop their WebRecorder product that records users on websites for beta testing and usability studies. I focused on serializing all user interaction, along with site DOM changes that could then be saved in a database and replayed as a recording.}}
+	{false}{\small{Developed a project along with 8 other people for The Beta Family.
+	\begin{itemize}
+		\item Worked as the Project Manager, leading 8 other people while simultaneously participating heavily in programming.
+		\item Serialized webpage DOM state as JSON object and sent to database to be replayed later.
+	\end{itemize}
+	}}
+}
+	  \\
 \IfEqCase{\anonymous}{
 	{false}{\textbf{\href{http://www.nada.kth.se/~eihren/\#cruisercommand}{Cruiser Command}}}
 	{true}{\textbf{\href{http://www.cruisercommand.com}{Cruiser Command}}}
-} & \small{Spent three years continuously developing and maintaining a mod on my own for Starcraft 2 played by hundreds of players with an average rating of over 4.7/5 out of over 2000 reviews. While developing Cruiser Command from start to finish, I had to solve interesting problems such as advanced Artificial Intelligence, complex math intersection formulas and tracking down bugs in a large code base.} \\\\
+} &\IfEqCase{\longdesc}{
+	{true}{ \small{Spent three years continuously developing and maintaining a mod on my own for Starcraft 2 played by thousands of players with an average rating of over 4.8/5 out of over 2000 reviews. While developing Cruiser Command from start to finish, I had to solve interesting problems such as advanced Artificial Intelligence, complex math intersection formulas and tracking down bugs in a large code base.}}
+	{false}{\small{Spent three years continuously developing my own mod for Starcraft 2, played by thousands.
+	\begin{itemize}
+		\item Average rating of over 4.8/5 out of over 2000 reviews.
+		\item Implementing advanced AI for a complex team-based strategy game. 
+		\item Working and fixing bugs in a code base with over 25,000 lines of my own code.
+	\end{itemize}
+	}}
+} \\
 %\textbf{Quadcopter:} & \small{Built and programmed a Quadrocopter from scratch during the summer of 2010 with a friend using the open source AeroQuad library.} \\\\
 \IfEqCase{\anonymous}{
 	{false}{\textbf{\href{https://github.com/Siretu/kartobot}{Kartobot}}}
 	{true}{\textbf{\href{http://github.com/Someone/source}{Kartobot}}}
-} & \small{Built and programmed a mapping robot with two friends. Using a tower with rotating ultrasonic sensors it was possible to measure the distance and use that to draw a 2D map of the room, while it was exploring using a pathfinding algorithm. I worked mainly on the tower and making sure the ultrasonic sensors were working properly. I also developed an A* algorithm in C for the pathfinding and ended up optimizing it by 100x.}
+} & \IfEqCase{\longdesc}{
+	{true}{\small{Built and programmed a mapping robot with two friends. Using a tower with rotating ultrasonic sensors it was possible to measure the distance and use that to draw a 2D map of the room, while it was exploring using a pathfinding algorithm. I worked mainly on the tower and making sure the ultrasonic sensors were working properly. I also developed an A* algorithm in C for the pathfinding and ended up optimizing it by 100x.}}
+	{false}{\small{Built and programmed a mapping robot with two friends. Uses ultrasonic sensors to draw a map.
+	\begin{itemize}
+		\item Implemented A* pathfinding algorithm in C
+		\item Optimized algorithm for extreme memory constraints (10kB)
+		\item Modified algorithm to use binary heaps to increase performance with 100x.
+	\end{itemize}
+	}}}
 \end{tabular}
+
+
+\titlespacing{\section}{0pt}{-12pt}{0pt} % Pull Computer skills closer
 
 %----------------------------------------------------------------------------------------
 %	COMPUTER SKILLS 
 %----------------------------------------------------------------------------------------
 
 \section{Computer Skills}
-
 \begin{tabular}{lp{13cm}}
 \textbf{Languages} & \small{I'm experienced with Python, Java, C\# and C/C++. I'm also familiar with a great deal of other languages like Lisp, Go, Haskell, Prolog and Javascript.}\\\\
 \textbf{Tools/Frameworks~} & \small{I have experience with following tools and frameworks: Git, CAD, Django, SQL, HTML/CSS and LaTeX.}
@@ -192,6 +223,7 @@ right  = 2.50cm]{geometry}
 \small{
 \item Finalist in Swedish national programming competition at high school level.
 \item First place in Linköping University’s case competition 2011.
-\item Second place in Spotify’s Hockey Programming Challenge.}
+\item Second place in Spotify’s Hockey Programming Challenge.
+}
 \end{itemize}
 \end{document}
