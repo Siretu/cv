@@ -67,14 +67,11 @@ bottom = 0.4cm,
 left   = 2.50cm,
 right  = 2.50cm
 ]{geometry}
-%\newgeometry{left=3cm,bottom=0.1cm}
 
 \begin{document}
 
 \pagestyle{fancy} % Removes page numbering
 \pagenumbering{gobble}
-
-%\font\fb=''[cmr10]'' % Change the font of the \LaTeX command under the skills section
 
 %----------------------------------------------------------------------------------------
 %	NAME AND CONTACT INFORMATION
@@ -96,14 +93,16 @@ right  = 2.50cm
 %----------------------------------------------------------------------------------------
 
 \section{Education}
-\begin{tabular}{rl}	
-\textsc{2012 - } & \textbf{\IfEqCase{\anonymous}{
+\begin{tabular}{ll}	
+ & \textbf{\IfEqCase{\anonymous}{
 	{false}{Royal Institute of Technology, Stockholm}
 	{true}{Some University, Sweden}
 }}\\
-& Master's Degree in \textsc{Computer Science}\\
-& Expected graduation year: 2017\\
+& Combined BSc/MSc in  \textsc{Computer Science}\\
+\textbf{Bachelor's Degree}& Expected graduation: June 2015\\
+\textbf{Master's Degree}&  Expected graduation: June 2017\\
 & Major GPA: 3.92\\
+
 
 %\textsc{2009 - 2012} & High School at \textbf{Danderyds Gymnasium}\\&Advanced placement program for Mathematics\\
 \end{tabular}
@@ -117,37 +116,54 @@ right  = 2.50cm
 \begin{tabular}{lp{13cm}}
 \textbf{Ericsson} & Software Developer, June 2014 - December 2014 \\
 & \IfEqCase{\longdesc}{
-	{true}{\small{Worked on automating dependency extraction for Ericsson’s entire RNC codebase. The work I did automatically figures out the impacted projects and automatically rebuilds and tests those when a commit is pushed. Also improved upon a general build support tool to simplify continuous integration.}}
-	{false}{\small{Worked on automating dependency extraction for Ericsson’s entire RNC codebase. The work I did automatically figures out the impacted projects and automatically rebuilds and tests those when a commit is pushed. Also improved upon a general build support tool to simplify continuous integration.}}
+	{true}{\small{Worked on automating dependency extraction for Ericsson’s entire RNC codebase. The work I did automatically figures out the impacted projects and automatically rebuilds and tests those when a commit is pushed. Also improved upon a general build support tool to simplify continuous integration.\linebreak}}
+	{false}{\begin{itemize}
+			\item \small{Wrote Python scripts to automatically extract dependencies between the huge number of Ericsson projects.}
+			\item \small{This removed the need to rebuild and test everything for every commit, which greatly increased performance in their continuous integration.}
+			\item \small{Extended upon my work to make it usable in other parts of Ericsson.}
+		\end{itemize}}
 }
 \\
-\multicolumn{2}{c}{} \\
 
 %------------------------------------------------
 
 \textbf{Domain Name ~~~~~~} & Summer Intern, May 2013 - August 2013\\
-\textbf{Services     }& \IfEqCase{\longdesc}{
-	{true}{\small{Worked in South Africa on programming an internal asset registry in the Django admin interface for registering and keeping track of company assets. I also participated in the ICANN and AFRINIC conferences where I spoke to potential customers about dotAfrica.}}
-	{false}{\small{Worked in South Africa on programming an internal asset registry in the Django admin interface for registering and keeping track of company assets. I also participated in the ICANN and AFRINIC conferences where I spoke to potential customers about dotAfrica.}}
+\textbf{Services}& \IfEqCase{\longdesc}{
+	{true}{\small{Worked in South Africa on programming an internal asset registry in the Django admin interface for registering and keeping track of company assets. I also participated in the ICANN and AFRINIC conferences where I spoke to potential customers about dotAfrica.\linebreak}}
+	{false}{\begin{itemize}
+			\item \small{Moved to South Africa and worked for a summer.}
+			\item \small{Implemented an asset registry system in their Django admin interface.}
+			\item \small{Travelled to Durban and Zambia to go to the ICANN and AFRINIC conferences.}
+		\end{itemize}}
 }\\
-\multicolumn{2}{c}{} \\
 
 %------------------------------------------------
 
 \textbf{Netnod} & Summer Intern, June 2011 - August 2011 and June 2012 - August 2012\\
  & \IfEqCase{\longdesc}{
- 	{true}{\small{Developed a user interface with Python’s framework Django to help visualize arbitrary data from databases. This was used to automatically translate and present data for Netnod customers in the Django Admin Interface. I came back a second year after that to optimize and maintain my work.}}
- 	{false}{\small{Developed a user interface with Python’s framework Django to help visualize arbitrary data from databases. This was used to automatically translate and present data for Netnod customers in the Django Admin Interface.}}
+ 	{true}{\small{Developed a user interface with Python’s framework Django to help visualize arbitrary data from databases. This was used to automatically translate and present data for Netnod customers in the Django Admin Interface.\linebreak}}
+ 	{false}{\begin{itemize}
+ 			\item \small{Extended Django's admin interface to pull arbitrary data from models.}
+ 			\item \small{Used the Javascript library Flot to visualize the data compared to other models.}
+		\end{itemize}}
  }\\
- \multicolumn{2}{c}{} \\
  
  %------------------------------------------------
  
- \textbf{KTH} & Teaching Assistant, August 2014 - December 2014\\
- & \small{Worked as TA for the course Programming Paradigms where students learn about functional and logic programming in Haskell and Prolog. }  
+ \textbf{\IfEqCase{\anonymous}{
+ 	{false}{KTH}
+ 	{true}{A university}
+ }} & Teaching Assistant, August 2014 - December 2014\\
+ & \IfEqCase{\longdesc}{
+ 	{true}{\small{Worked as TA for the course Programming Paradigms where students learn about functional and logic programming in Haskell and Prolog.}}
+ 	{false}{\begin{itemize}
+ 			\item \small{Graded and helped students with lab assignments for the course Programming Paradigms where students learn about functional and logic programming. }  
+		\end{itemize}}
+}
  
 \end{tabular}
 
+\titlespacing{\section}{0pt}{-15pt}{0pt} % Pull Projects closer
 
 %----------------------------------------------------------------------------------------
 %	PROJECTS
@@ -157,12 +173,12 @@ right  = 2.50cm
 \begin{tabular}{lp{13cm}}
 & 
 \IfEqCase{\anonymous}{
-	{false}{\footnotesize{\emph{Full portfolio can be found on \href{http://www.nada.kth.se/~eihren}{my personal site.}}}}
-	{true}{\footnotesize{\emph{Full portfolio can be found on \href{http://www.somesite.com}{my personal site.}}}}
+	{false}{\footnotesize{\emph{Full portfolio can be found on my personal site: \href{http://www.nada.kth.se/~eihren}{http://www.nada.kth.se/$\sim$eihren}}}}
+	{true}{\footnotesize{\emph{Full portfolio can be found on my personal site: \href{http://www.somesite.com}{http://www.somesite.com}}}}
 }
  \\\\
 \textbf{\href{https://betafamily.com/webrecorder/demo}{SuperWebRecorder}} & \IfEqCase{\longdesc}{
-	{true}{\small{Worked as a Project Manager and Programmer in a project with 8 other people for The Beta Family to develop their WebRecorder product that records users on websites for beta testing and usability studies. I focused on serializing all user interaction, along with site DOM changes that could then be saved in a database and replayed as a recording.}}
+	{true}{\small{Worked as a Project Manager and Programmer in a project with 8 other people for The Beta Family to develop their WebRecorder product that records users on websites for beta testing and usability studies. I focused on serializing all user interaction, along with site DOM changes that could then be saved in a database and replayed as a recording.\linebreak}}
 	{false}{\small{Developed a project along with 8 other people for The Beta Family.
 	\begin{itemize}
 		\item Worked as the Project Manager, leading 8 other people while simultaneously participating heavily in programming.
@@ -175,7 +191,7 @@ right  = 2.50cm
 	{false}{\textbf{\href{http://www.nada.kth.se/~eihren/\#cruisercommand}{Cruiser Command}}}
 	{true}{\textbf{\href{http://www.cruisercommand.com}{Cruiser Command}}}
 } &\IfEqCase{\longdesc}{
-	{true}{ \small{Spent three years continuously developing and maintaining a mod on my own for Starcraft 2 played by thousands of players with an average rating of over 4.8/5 out of over 2000 reviews. While developing Cruiser Command from start to finish, I had to solve interesting problems such as advanced Artificial Intelligence, complex math intersection formulas and tracking down bugs in a large code base.}}
+	{true}{ \small{Spent three years continuously developing and maintaining a mod on my own for Starcraft 2 played by thousands of players with an average rating of over 4.8/5 out of over 2000 reviews. While developing Cruiser Command from start to finish, I had to solve interesting problems such as advanced Artificial Intelligence, complex math intersection formulas and tracking down bugs in a large code base.\linebreak}}
 	{false}{\small{Spent three years continuously developing my own mod for Starcraft 2, played by thousands.
 	\begin{itemize}
 		\item Average rating of over 4.8/5 out of over 2000 reviews.
@@ -189,7 +205,7 @@ right  = 2.50cm
 	{false}{\textbf{\href{https://github.com/Siretu/kartobot}{Kartobot}}}
 	{true}{\textbf{\href{http://github.com/Someone/source}{Kartobot}}}
 } & \IfEqCase{\longdesc}{
-	{true}{\small{Built and programmed a mapping robot with two friends. Using a tower with rotating ultrasonic sensors it was possible to measure the distance and use that to draw a 2D map of the room, while it was exploring using a pathfinding algorithm. I worked mainly on the tower and making sure the ultrasonic sensors were working properly. I also developed an A* algorithm in C for the pathfinding and ended up optimizing it by 100x.}}
+	{true}{\small{Built and programmed a mapping robot with two friends. Using a tower with rotating ultrasonic sensors it was possible to measure the distance and use that to draw a 2D map of the room, while it was exploring using a pathfinding algorithm. I worked mainly on the tower and making sure the ultrasonic sensors were working properly. I also developed an A* algorithm in C for the pathfinding and ended up optimizing it by 100x.\linebreak}}
 	{false}{\small{Built and programmed a mapping robot with two friends. Uses ultrasonic sensors to draw a map.
 	\begin{itemize}
 		\item Implemented A* pathfinding algorithm in C
