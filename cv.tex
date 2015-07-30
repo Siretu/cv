@@ -58,7 +58,7 @@
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule] % Text formatting of sections
 \titlespacing{\section}{0pt}{1.5pt}{1.5pt} % Spacing around sections
 
-\newcommand{\anonymous}{false}
+\newcommand{\anonymous}{true}
 \newcommand{\longdesc}{false}
 
 \usepackage[
@@ -94,15 +94,13 @@ right  = 2.50cm
 
 \section{Education}
 \begin{tabular}{ll}	
- & \textbf{\IfEqCase{\anonymous}{
-	{false}{Royal Institute of Technology, Stockholm}
+ \textbf{Bachelor's Degree}& \textbf{\IfEqCase{\anonymous}{
+	{false}{Royal Institute of Technology, Sweden}
 	{true}{Some University, Sweden}
 }}\\
-& Combined BSc/MSc in  \textsc{Computer Science}\\
-\textbf{Bachelor's Degree}& Expected graduation: June 2015\\
-\textbf{Master's Degree}&  Expected graduation: June 2017\\
+ Computer Science & Expected graduation: October 2015\\
 & Major GPA: 3.92\\
-
+& Teaching Assistant, August 2014 - December 2014\\
 
 %\textsc{2009 - 2012} & High School at \textbf{Danderyds Gymnasium}\\&Advanced placement program for Mathematics\\
 \end{tabular}
@@ -114,13 +112,24 @@ right  = 2.50cm
 
 \section{Work Experience}
 \begin{tabular}{lp{13cm}}
+
+\textbf{Spotify} & Software Developer, Sweden, June 2015 - August 2015 \\
+& \IfEqCase{\longdesc}{
+	{true}{\small{.\linebreak}}
+	{false}{\begin{itemize}
+			\item \small{Created a new message hub for Spotify's data infrastructure, handling billions of \mbox{messages} per hour.}
+			\item \small{Optimized the hub down to take 18 minutes per chunk, down from 1.5 hours with Spotify's old implementation. }
+		\end{itemize}}
+}
+\\
+
+
 \textbf{Ericsson} & Software Developer, Sweden, June 2014 - December 2014 \\
 & \IfEqCase{\longdesc}{
 	{true}{\small{Worked on automating dependency extraction for Ericsson’s entire RNC codebase. The work I did automatically figures out the impacted projects and automatically rebuilds and tests those when a commit is pushed. Also improved upon a general build support tool to simplify continuous integration.\linebreak}}
 	{false}{\begin{itemize}
 			\item \small{Wrote Python scripts to automatically extract dependencies between the huge number of Ericsson projects.}
 			\item \small{This removed the need to rebuild and test everything for every commit, which greatly increased performance in their continuous integration.}
-			\item \small{Expanded my work to make it usable in other parts of Ericsson.}
 		\end{itemize}}
 }
 \\
@@ -132,7 +141,7 @@ right  = 2.50cm
 	{true}{\small{Worked in South Africa on programming an internal asset registry in the Django admin interface for registering and keeping track of company assets. I also participated in the ICANN and AFRINIC conferences where I spoke to potential customers about dotAfrica.\linebreak}}
 	{false}{\begin{itemize}
 			\item \small{Implemented an asset registry system in their Django admin interface.}
-			\item \small{Worked on automating several administrative applications and scripts using pexpect.}
+			\item \small{Worked on automating several administrative applications and scripts.}
 			\item \small{Attended the ICANN and AFRINIC conferences.}
 		\end{itemize}}
 }\\
@@ -150,17 +159,17 @@ right  = 2.50cm
  
  %------------------------------------------------
  
- \textbf{\IfEqCase{\anonymous}{
- 	{false}{KTH}
- 	{true}{A university}
- }} & Teaching Assistant, August 2014 - December 2014\\
- & \IfEqCase{\longdesc}{
- 	{true}{\small{Worked as TA for the course Programming Paradigms where students learn about functional and logic programming in Haskell and Prolog.}}
- 	{false}{\begin{itemize}
- 			\item \small{Graded and helped students with lab assignments for the course Programming Paradigms where students learn about functional and logic programming. }  
-		\end{itemize}}
-}
- 
+% \textbf{\IfEqCase{\anonymous}{
+% 	{false}{KTH}
+% 	{true}{A university}
+% }} & Teaching Assistant, August 2014 - December 2014\\
+% & \IfEqCase{\longdesc}{
+% 	{true}{\small{Worked as TA for the course Programming Paradigms where students learn about functional and logic programming in Haskell and Prolog.}}
+% 	{false}{\begin{itemize}
+% 			\item \small{Graded and helped students with lab assignments for the course Programming Paradigms where students learn about functional and logic programming. }  
+%		\end{itemize}}
+%}
+% 
 \end{tabular}
 
 \titlespacing{\section}{0pt}{-15pt}{0pt} % Pull Projects closer
@@ -181,7 +190,7 @@ right  = 2.50cm
 	{true}{\small{Worked as a Project Manager and Programmer in a project with 8 other people for The Beta Family to develop their WebRecorder product that records users on websites for beta testing and usability studies. I focused on serializing all user interaction, along with site DOM changes that could then be saved in a database and replayed as a recording.\linebreak}}
 	{false}{\small{Developed a project along with 8 other people for The Beta Family.
 	\begin{itemize}
-		\item Worked as the Project Manager, leading 8 other people while simultaneously participating heavily in programming.
+		\item Worked as the Project Manager, leading 8 other people while simultaneously \mbox{participating} heavily in programming.
 		\item Serialized webpage DOM state as JSON object and sent to database to be replayed later.
 	\end{itemize}
 	}}
@@ -224,8 +233,8 @@ right  = 2.50cm
 
 \section{Computer Skills}
 \begin{tabular}{lp{13cm}}
-\textbf{Languages} & \small{I'm experienced with Python, Java, C\# and C/C++. I'm also familiar with a great deal of other languages like Lisp, Go, Haskell, Prolog and Javascript.}\\\\
-\textbf{Tools/Frameworks~} & \small{I have experience with following tools and frameworks: Git, CAD, Django, MySQL, HTML/CSS, Bootstrap, AngularJS, Docker and LaTeX.}
+\textbf{Languages} & \small{I'm experienced with Python, Java, C\# and C/C++. I'm also familiar with a great deal of other languages like Lisp, Go, Haskell, Prolog, Ruby, Swift and Javascript.}\\\\
+\textbf{Tools/Frameworks~} & \small{I have experience with following tools and frameworks: Git, CAD, Django, MySQL, HTML/CSS, Bootstrap, AngularJS, Docker, Hadoop, Crunch and LaTeX.}
 %\\\\
 %\textsc{Python:} & \small{Used from an early age as my go-to language. I’ve created a great number of pet projects in Python and it was also the language I used the most during my previous internships.}\\\\
 
