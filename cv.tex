@@ -58,7 +58,7 @@
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule] % Text formatting of sections
 \titlespacing{\section}{0pt}{1.5pt}{1.5pt} % Spacing around sections
 
-\newcommand{\anonymous}{true}
+\newcommand{\anonymous}{false}
 \newcommand{\longdesc}{false}
 
 \usepackage[
@@ -118,7 +118,7 @@ right  = 2.50cm
 	{true}{\small{.\linebreak}}
 	{false}{\begin{itemize}
 			\item \small{Created a new message hub for Spotify's data infrastructure, handling billions of \mbox{messages} per hour.}
-			\item \small{Optimized the hub down to take 18 minutes per chunk, down from 1.5 hours with Spotify's old implementation. }
+			\item \small{Optimized the system to take 15 minutes per chunk, down from 1.5 hours with Spotify's old implementation. }
 		\end{itemize}}
 }
 \\
@@ -129,7 +129,7 @@ right  = 2.50cm
 	{true}{\small{Worked on automating dependency extraction for Ericsson’s entire RNC codebase. The work I did automatically figures out the impacted projects and automatically rebuilds and tests those when a commit is pushed. Also improved upon a general build support tool to simplify continuous integration.\linebreak}}
 	{false}{\begin{itemize}
 			\item \small{Wrote Python scripts to automatically extract dependencies between the huge number of Ericsson projects.}
-			\item \small{This removed the need to rebuild and test everything for every commit, which greatly increased performance in their continuous integration.}
+			\item \small{This removed the need to rebuild and test everything for every commit, which greatly increased performance in their continuous integration environment.}
 		\end{itemize}}
 }
 \\
