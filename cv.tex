@@ -117,8 +117,8 @@ right  = 2.50cm
 & \IfEqCase{\longdesc}{
 	{true}{\small{.\linebreak}}
 	{false}{\begin{itemize}
-			\item \small{Created a new message hub for Spotify's data infrastructure, handling billions of \mbox{messages} per hour.}
-			\item \small{Optimized the system to take 15 minutes per chunk, down from 1.5 hours with Spotify's old implementation. }
+			\item \small{Created a new message hub for Spotify's data infrastructure, handling billions of \mbox{messages} per hour using Crunch and Hadoop.}
+			\item \small{Reduced execution time per hour by 85\%, taking down the average time of one run from 1.5 hours to 15 minutes.}
 		\end{itemize}}
 }
 \\
@@ -172,7 +172,7 @@ right  = 2.50cm
 % 
 \end{tabular}
 
-\titlespacing{\section}{0pt}{-15pt}{0pt} % Pull Projects closer
+\titlespacing{\section}{0pt}{-20pt}{0pt} % Pull Projects closer
 
 %----------------------------------------------------------------------------------------
 %	PROJECTS
@@ -188,10 +188,10 @@ right  = 2.50cm
  \\\\
 \textbf{\href{https://betafamily.com/webrecorder/demo}{SuperWebRecorder}} & \IfEqCase{\longdesc}{
 	{true}{\small{Worked as a Project Manager and Programmer in a project with 8 other people for The Beta Family to develop their WebRecorder product that records users on websites for beta testing and usability studies. I focused on serializing all user interaction, along with site DOM changes that could then be saved in a database and replayed as a recording.\linebreak}}
-	{false}{\small{Developed a project along with 8 other people for The Beta Family.
+	{false}{\small{Created javascript library to record users' interactions with a site for usability purposes.
 	\begin{itemize}
 		\item Worked as the Project Manager, leading 8 other people while simultaneously \mbox{participating} heavily in programming.
-		\item Serialized webpage DOM state as a JSON object and sent to database to be replayed later.
+		\item Serialized webpage DOM state as a JSON object and sent to database to be replayed for the site owner later on.
 	\end{itemize}
 	}}
 }
@@ -205,7 +205,7 @@ right  = 2.50cm
 	\begin{itemize}
 		\item Average rating of over 4.8/5 out of over 2000 reviews.
 		\item Implementing advanced AI for a complex team-based strategy game. 
-		\item Working and fixing bugs in a code base with over 25,000 lines of my own code.
+		\item Working and fixing bugs in a code base with over 25,000 lines of my own custom code.
 	\end{itemize}
 	}}
 } \\
@@ -215,7 +215,7 @@ right  = 2.50cm
 	{true}{\textbf{\href{http://github.com/Someone/source}{Kartobot}}}
 } & \IfEqCase{\longdesc}{
 	{true}{\small{Built and programmed a mapping robot with two friends. Using a tower with rotating ultrasonic sensors it was possible to measure the distance and use that to draw a 2D map of the room, while it was exploring using a pathfinding algorithm. I worked mainly on the tower and making sure the ultrasonic sensors were working properly. I also developed an A* algorithm in C for the pathfinding and ended up optimizing it by 100x.\linebreak}}
-	{false}{\small{Built and programmed a mapping robot with two friends. Uses ultrasonic sensors to draw a map.
+	{false}{\small{Built and programmed a mapping robot with two friends. Uses two rotating ultrasonic sensors to draw a realtime map of surrounding area.
 	\begin{itemize}
 		\item Implemented A* pathfinding algorithm in C
 		\item Optimized algorithm for extreme memory constraints (10kB)
@@ -225,7 +225,7 @@ right  = 2.50cm
 \end{tabular}
 
 
-\titlespacing{\section}{0pt}{-12pt}{0pt} % Pull Computer skills closer
+\titlespacing{\section}{0pt}{-15pt}{0pt} % Pull Computer skills closer
 
 %----------------------------------------------------------------------------------------
 %	COMPUTER SKILLS 
