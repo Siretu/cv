@@ -188,6 +188,26 @@ right  = 2.50cm
 	{true}{\footnotesize{\emph{Full portfolio can be found on my personal site: \href{http://www.somesite.com}{http://www.somesite.com}}}}
 }
 
+ 
+  % Jasper
+ \IfEqCase{true}{
+ 	{false}{}
+	{true}{
+		\\
+		\textbf{\href{http://www.nada.kth.se/~eihren/\#homeautomation}{Home Automation}} & \IfEqCase{\longdesc}{
+			{true}{\small{Worked as a Project Manager and Programmer in a project with 8 other people for The Beta Family to develop their WebRecorder product that records users on websites for beta testing and usability studies. I focused on serializing all user interaction, along with site DOM changes that could then be saved in a database and replayed as a recording.\linebreak}}
+			{false}{\small{Implemented voice control and automation for various things in my apartment.
+				\begin{itemize}
+					\item Voice controls allows me to play music and control lights and music volume.
+					\item Surveillance system emails me if it detects movement when I'm not home.
+					\item Reminder system allows my server to notify me of upcoming events.
+				\end{itemize}
+				}
+			}
+		}
+	}
+}
+ 
  % SuperWebRecorder
  \IfEqCase{false}{
  	{false}{}
@@ -196,11 +216,12 @@ right  = 2.50cm
 		\textbf{\href{https://betafamily.com/webrecorder/demo}{SuperWebRecorder}} & \IfEqCase{\longdesc}{
 			{true}{\small{Worked as a Project Manager and Programmer in a project with 8 other people for The Beta Family to develop their WebRecorder product that records users on websites for beta testing and usability studies. I focused on serializing all user interaction, along with site DOM changes that could then be saved in a database and replayed as a recording.\linebreak}}
 			{false}{\small{Created javascript library to record users' interactions with a site for usability purposes.
-			\begin{itemize}
-				\item Worked as the Project Manager, leading 8 other people while simultaneously \mbox{participating} heavily in programming.
-				\item Serialized webpage DOM state as a JSON object and sent to database to be replayed for the site owner later on.
-			\end{itemize}
-			}}
+				\begin{itemize}
+					\item Worked as the Project Manager, leading 8 other people while simultaneously \mbox{participating} heavily in programming.
+					\item Serialized webpage DOM state as a JSON object and sent to database to be replayed for the site owner later on.
+				\end{itemize}
+				}
+			}
 		}
 	}
 }
